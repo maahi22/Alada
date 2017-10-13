@@ -1,0 +1,6 @@
+framework module Pods_MAladaUITests {
+  umbrella header "Pods-MAladaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
