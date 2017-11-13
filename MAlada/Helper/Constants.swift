@@ -8,4 +8,17 @@
 
 import Foundation
 
-let     BaseUrl = "http://"
+let     BaseUrl = "http://www.mob.alada.co.in/api/Employee/"
+let     MAlada_Login = "UserLogin?"
+let     MAlada_ViewImages = "ViewPhoto?"
+let     MAlada_ImageDelete = "DeletePhoto?"
+
+let     BaseUrl2 = "http://www.alada.co.in/AladaWebService.asmx/"
+let     MAlada_FeaturedImages = "GetFetureImage"
+
+
+
+
+
+
+let     UserDetails = "UserDetails"

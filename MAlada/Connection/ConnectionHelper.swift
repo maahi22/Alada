@@ -79,7 +79,7 @@ class ConnectionHelper: NSObject {
     }
     
     
-    class  func GetDataFromJson(url: String,  completion: @escaping (_ success: NSDictionary ,  _ Status :Bool) -> Void) {
+    class  func GetDataFromJson(_ url: String,  completion: @escaping (_ success: NSDictionary ,  _ Status :Bool) -> Void) {
         
         print("GetDataFromJson \(url)")
         var request = URLRequest(url: URL(string: url)!)

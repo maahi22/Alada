@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0D753884B6E469DEFB8EFD9E /* Pods_MAladaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701C0C0D5524175E1DB75455 /* Pods_MAladaUITests.framework */; };
+		0F630CD71FB9F18A0003828C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CD61FB9F18A0003828C /* User.swift */; };
+		0F630CD91FB9F9A00003828C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CD81FB9F9A00003828C /* Photo.swift */; };
+		0F630CE61FBA082A0003828C /* CustomSideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CE51FBA082A0003828C /* CustomSideMenuController.swift */; };
+		0F630CE71FBA08840003828C /* SideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F630CE11FBA07EA0003828C /* SideMenuController.framework */; };
+		0F630CE81FBA08890003828C /* SideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F630CE11FBA07EA0003828C /* SideMenuController.framework */; };
+		0F630CE91FBA08890003828C /* SideMenuController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F630CE11FBA07EA0003828C /* SideMenuController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0F630CEE1FBA09FD0003828C /* FeaturedImagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CED1FBA09FD0003828C /* FeaturedImagesVC.swift */; };
+		0F630CF01FBA0A340003828C /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CEF1FBA0A340003828C /* MenuVC.swift */; };
+		0F630CF21FBA0E0C0003828C /* DeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CF11FBA0E0C0003828C /* DeleteVC.swift */; };
+		0F630CF41FBA14340003828C /* InsertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CF31FBA14340003828C /* InsertVC.swift */; };
+		0F630CF61FBA191D0003828C /* FeaturedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CF51FBA191D0003828C /* FeaturedImages.swift */; };
 		5D9146E11F908478003A9FCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9146E01F908478003A9FCD /* AppDelegate.swift */; };
 		5D9146E31F908478003A9FCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9146E21F908478003A9FCD /* ViewController.swift */; };
 		5D9146E61F908478003A9FCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9146E41F908478003A9FCD /* Main.storyboard */; };
@@ -29,6 +40,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0F630CE01FBA07EA0003828C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13A757E61D12A2A0004488DA;
+			remoteInfo = SideMenuController;
+		};
+		0F630CE21FBA07EA0003828C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 13A757F01D12A2A0004488DA;
+			remoteInfo = SideMenuControllerTests;
+		};
+		0F630CEA1FBA088A0003828C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 13A757E51D12A2A0004488DA;
+			remoteInfo = SideMenuController;
+		};
 		5D9146F51F908478003A9FCD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D9146D51F908478003A9FCD /* Project object */;
@@ -45,8 +77,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0F630CEC1FBA088A0003828C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F630CE91FBA08890003828C /* SideMenuController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A4E5BB71B7B62295F0A49AB /* Pods-MAladaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAladaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAladaTests/Pods-MAladaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F630CD61FB9F18A0003828C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F630CD81FB9F9A00003828C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SideMenuController.xcodeproj; path = SideMenu/SideMenuController.xcodeproj; sourceTree = "<group>"; };
+		0F630CE51FBA082A0003828C /* CustomSideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuController.swift; sourceTree = "<group>"; };
+		0F630CED1FBA09FD0003828C /* FeaturedImagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedImagesVC.swift; sourceTree = "<group>"; };
+		0F630CEF1FBA0A340003828C /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		0F630CF11FBA0E0C0003828C /* DeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVC.swift; sourceTree = "<group>"; };
+		0F630CF31FBA14340003828C /* InsertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertVC.swift; sourceTree = "<group>"; };
+		0F630CF51FBA191D0003828C /* FeaturedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedImages.swift; sourceTree = "<group>"; };
 		5D9146DD1F908478003A9FCD /* MAlada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAlada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9146E01F908478003A9FCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D9146E21F908478003A9FCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F630CE81FBA08890003828C /* SideMenuController.framework in Frameworks */,
+				0F630CE71FBA08840003828C /* SideMenuController.framework in Frameworks */,
 				DE9438B70796A7E1A71C2180 /* Pods_MAlada.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,9 +165,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F630CD51FB9F17C0003828C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				0F630CD61FB9F18A0003828C /* User.swift */,
+				0F630CD81FB9F9A00003828C /* Photo.swift */,
+				0F630CF51FBA191D0003828C /* FeaturedImages.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		0F630CDC1FBA07EA0003828C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F630CE11FBA07EA0003828C /* SideMenuController.framework */,
+				0F630CE31FBA07EA0003828C /* SideMenuControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F630CE41FBA080F0003828C /* Sideview */ = {
+			isa = PBXGroup;
+			children = (
+				0F630CE51FBA082A0003828C /* CustomSideMenuController.swift */,
+				0F630CEF1FBA0A340003828C /* MenuVC.swift */,
+			);
+			path = Sideview;
+			sourceTree = "<group>";
+		};
 		5D9146D41F908478003A9FCD = {
 			isa = PBXGroup;
 			children = (
+				0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */,
 				5D9146DF1F908478003A9FCD /* MAlada */,
 				5D9146F71F908478003A9FCD /* MAladaTests */,
 				5D9147021F908478003A9FCD /* MAladaUITests */,
@@ -133,8 +219,9 @@
 		5D9146DF1F908478003A9FCD /* MAlada */ = {
 			isa = PBXGroup;
 			children = (
+				0F630CE41FBA080F0003828C /* Sideview */,
+				0F630CD51FB9F17C0003828C /* Modal */,
 				5D91471D1F90933E003A9FCD /* Cell */,
-				5D91471C1F9092E5003A9FCD /* Modal */,
 				5D91471B1F9092D9003A9FCD /* DBHelper */,
 				5D91471A1F9092D0003A9FCD /* Connection */,
 				5D9147191F9092C7003A9FCD /* Helper */,
@@ -182,6 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				5D9147151F908830003A9FCD /* HomeVC.swift */,
+				0F630CED1FBA09FD0003828C /* FeaturedImagesVC.swift */,
+				0F630CF11FBA0E0C0003828C /* DeleteVC.swift */,
+				0F630CF31FBA14340003828C /* InsertVC.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -218,13 +308,6 @@
 				5D9147201F909E27003A9FCD /* DBHelper.swift */,
 			);
 			path = DBHelper;
-			sourceTree = "<group>";
-		};
-		5D91471C1F9092E5003A9FCD /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modal;
 			sourceTree = "<group>";
 		};
 		5D91471D1F90933E003A9FCD /* Cell */ = {
@@ -271,10 +354,12 @@
 				5D9146DB1F908478003A9FCD /* Resources */,
 				EBE6095DD59D6C63438E129D /* [CP] Embed Pods Frameworks */,
 				895E45A6971D58A6810492DA /* [CP] Copy Pods Resources */,
+				0F630CEC1FBA088A0003828C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0F630CEB1FBA088A0003828C /* PBXTargetDependency */,
 			);
 			name = MAlada;
 			productName = MAlada;
@@ -360,6 +445,12 @@
 			mainGroup = 5D9146D41F908478003A9FCD;
 			productRefGroup = 5D9146DE1F908478003A9FCD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0F630CDC1FBA07EA0003828C /* Products */;
+					ProjectRef = 0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5D9146DC1F908478003A9FCD /* MAlada */,
@@ -368,6 +459,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0F630CE11FBA07EA0003828C /* SideMenuController.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SideMenuController.framework;
+			remoteRef = 0F630CE01FBA07EA0003828C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0F630CE31FBA07EA0003828C /* SideMenuControllerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SideMenuControllerTests.xctest;
+			remoteRef = 0F630CE21FBA07EA0003828C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5D9146DB1F908478003A9FCD /* Resources */ = {
@@ -552,15 +660,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9146E31F908478003A9FCD /* ViewController.swift in Sources */,
+				0F630CEE1FBA09FD0003828C /* FeaturedImagesVC.swift in Sources */,
 				5D9147231F909E59003A9FCD /* ConnectionHelper.swift in Sources */,
 				5D9147161F908830003A9FCD /* HomeVC.swift in Sources */,
 				5D9146E11F908478003A9FCD /* AppDelegate.swift in Sources */,
+				0F630CF41FBA14340003828C /* InsertVC.swift in Sources */,
+				0F630CF01FBA0A340003828C /* MenuVC.swift in Sources */,
+				0F630CE61FBA082A0003828C /* CustomSideMenuController.swift in Sources */,
 				5D9147211F909E27003A9FCD /* DBHelper.swift in Sources */,
 				5D9147141F90880C003A9FCD /* LoginVC.swift in Sources */,
+				0F630CF61FBA191D0003828C /* FeaturedImages.swift in Sources */,
+				0F630CD91FB9F9A00003828C /* Photo.swift in Sources */,
 				5D91471F1F909367003A9FCD /* HomeCell.swift in Sources */,
 				5D9147271F909F40003A9FCD /* UIColor+KCSColor.swift in Sources */,
+				0F630CD71FB9F18A0003828C /* User.swift in Sources */,
 				5D9146E91F908478003A9FCD /* MAlada.xcdatamodeld in Sources */,
 				5D9147291F909F49003A9FCD /* Validations.swift in Sources */,
+				0F630CF21FBA0E0C0003828C /* DeleteVC.swift in Sources */,
 				5D9147251F909EA9003A9FCD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +700,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0F630CEB1FBA088A0003828C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenuController;
+			targetProxy = 0F630CEA1FBA088A0003828C /* PBXContainerItemProxy */;
+		};
 		5D9146F61F908478003A9FCD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5D9146DC1F908478003A9FCD /* MAlada */;
@@ -727,9 +848,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66E504EE176C6B224E641652 /* Pods-MAlada.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VAWH7R9NX3;
+				DEVELOPMENT_TEAM = 6RYRJW337K;
 				INFOPLIST_FILE = MAlada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,9 +866,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9DE3627367E82EAD0061B49 /* Pods-MAlada.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VAWH7R9NX3;
+				DEVELOPMENT_TEAM = 6RYRJW337K;
 				INFOPLIST_FILE = MAlada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

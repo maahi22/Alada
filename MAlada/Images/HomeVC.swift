@@ -18,9 +18,11 @@ private let reuseIdentifierAvail =  "HomeCell"
 class HomeVC: UIViewController {
 
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     let selectionSts :Bool = true
-    var imageList = NSMutableArray()
+    var imageList : [Photo] = []
     var selectionArray = NSMutableArray()
     
     
@@ -28,7 +30,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.gray
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         navigationController?.navigationBar.tintColor = UIColor.black
         
@@ -44,6 +46,14 @@ class HomeVC: UIViewController {
     //called country available
     func getImageData() {
         
+        
+        var userId = ""
+        if let data = UserDefaults.standard.data(forKey: UserDetails),
+            let myUser = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
+            userId = myUser.UserId!
+        }
+        
+        
         //Call api
         let reachability = Reachability()!
         if !reachability.isReachable {
@@ -54,30 +64,37 @@ class HomeVC: UIViewController {
         }
         
         
-        let urlString = BaseUrl + ""
-        ConnectionHelper.GetDataFromJson(url: urlString) { (responce, status) in
+            self.activityIndicator.startAnimating()
             
-            if !status {
+            let urlString = BaseUrl + MAlada_ViewImages + "UserID=\(userId)"
+        
+            self.CallImageApiWithoutParameter(urlString) { (responce, status) in
                 
-                return
-            }
-            if let responceDict = responce.object(forKey: "response") {
-                
-                if let statusVal = responce.object(forKey: "status") {
-                    if (statusVal as! NSNumber).intValue == 1 {
-                        
-                        
-                        let resultArray = responceDict as! NSArray
-                        
-                        if resultArray.count == 0 {
-                            return
-                        }
-                        
-                        
-                    }
+            
+                if status {
+                    
+                    
+                    self.imageList = DBHelper.savePhotos(responce)
+                    
+                    DispatchQueue.main.async(execute: {  () -> Void  in
+                        self.activityIndicator.stopAnimating()
+                        self.homeCollectionView.reloadData()
+                    })
                 }
-            }
+                
+                
+            
+            
+            
+            
         }
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -101,6 +118,56 @@ class HomeVC: UIViewController {
     }
     */
 
+    
+    
+    
+    
+     func CallImageApiWithoutParameter (_ urlString:String ,completionHandler :@escaping ( _ responceArray: NSArray ,  _ Status :Bool) -> Void ){
+        
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) {Data, response, error in
+            
+            
+            guard let _: Data = Data, let _: URLResponse = response, error == nil else {
+                
+                let dict :[String] = ["alert"]
+                completionHandler(dict as NSArray ,false)
+                return
+            }
+            
+            let responseStrInISOLatin = String(data: Data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
+                print("could not convert data to UTF-8 format")
+                
+                let dict :[String] = ["alert"]
+                completionHandler(dict as NSArray ,false)
+                return
+            }
+            do {
+                let responseJSONDict = try JSONSerialization.jsonObject(with: modifiedDataInUTF8Format)
+                completionHandler(responseJSONDict as! NSArray ,true)
+                //print(responseJSONDict)
+                
+                
+            } catch {
+                print(error)
+            }
+            
+            
+            
+            }.resume()
+        
+        
+    }
+    
+    
+    
+    
+    
+    
 }
 
 
@@ -118,51 +185,21 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
         // #warning Incomplete implementation, return the number of items
         
         
-        return 10
+        return self.imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
             let cell:HomeCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierAvail, for: indexPath) as! HomeCell
-            
-           /* let avail = availableInList [indexPath.item] as CountryAvailable
-            
-            if let country = avail.country_name {
-                cell.lblTitle.text = country
-                
-                FilesMethods.getImageFromDocDir("AvailableContry/\(String(describing: country))") { (img, sts) in
-                    
-                    if sts {
-                        cell.imageView.image = img
-                    }
-                }
-            }
-            
-            
-            if let thumbUrl = avail.thumb {
-                
-                URLSession.shared.dataTask(with: NSURL(string: thumbUrl)! as URL, completionHandler: { (data, response, error) -> Void in
-                    
-                    if error != nil {
-                        print(error)
-                        return
-                    }
-                    DispatchQueue.main.async(execute: { () -> Void in
-                        let image = UIImage(data: data!)
-                        cell.imageView.image = image
-                        
-                        if let country = avail.country_name {
-                            FilesMethods.saveImageDocumentDirectory("AvailableContry/\(String(describing: country))",imageData: (UIImagePNGRepresentation(image!) as NSData?)!)
-                        }
-                    })
-                    
-                }).resume()
-                
-                
-            }*/
         
-        cell.lblTitle.text = "ABC"
+        
+            let img:Photo = self.imageList[indexPath.row]
+        
+        
+        
+        
+        cell.lblTitle.text = img.PhotoID
         
             cell.contentView.layer.cornerRadius = 4.0
             cell.contentView.layer.borderWidth = 1.0

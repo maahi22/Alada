@@ -22,8 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
         
+        if let data = UserDefaults.standard.data(forKey: UserDetails),
+            let _ = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
+            
+            print("Already Loged in")
+        } else {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let ViewController = mainStoryBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            let navController = UINavigationController(rootViewController: ViewController)
+            
+            
+        }
         
-        UINavigationBar.appearance().barTintColor = UIColor.black
+        
+        
+        
+        UINavigationBar.appearance().barTintColor = UIColor.gray
         UIBarButtonItem.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barTintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
