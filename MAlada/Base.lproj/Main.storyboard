@@ -293,18 +293,162 @@
         <!--Delete-->
         <scene sceneID="uof-z0-6v0">
             <objects>
-                <viewController storyboardIdentifier="DeleteVC" id="SEc-Bq-ksA" customClass="DeleteVC" customModule="MAlada" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeleteVC" automaticallyAdjustsScrollViewInsets="NO" id="SEc-Bq-ksA" customClass="DeleteVC" customModule="MAlada" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UK9-NU-PgQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-kh-Vil">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RUx-LB-4Zy">
+                                    <size key="itemSize" width="136" height="124"/>
+                                    <size key="headerReferenceSize" width="5" height="5"/>
+                                    <size key="footerReferenceSize" width="5" height="5"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DeleteCell" id="iq8-xw-yIA" customClass="DeleteCell" customModule="MAlada" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="10" width="136" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="136" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Vmm-UX-BzA">
+                                                    <rect key="frame" x="5" y="5" width="126" height="85"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2Z-8x-kuM">
+                                                    <rect key="frame" x="5" y="95" width="126" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="fJh-Za-1jN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uTb-nB-QHJ">
+                                                    <rect key="frame" x="50" y="44" width="37" height="37"/>
+                                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </activityIndicatorView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Avl-Iw-XN2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="124"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="P2Z-8x-kuM" firstAttribute="leading" secondItem="iq8-xw-yIA" secondAttribute="leading" constant="5" id="8Ck-TT-0Gz"/>
+                                            <constraint firstItem="Vmm-UX-BzA" firstAttribute="top" secondItem="iq8-xw-yIA" secondAttribute="top" constant="5" id="9hN-au-tIQ"/>
+                                            <constraint firstItem="Avl-Iw-XN2" firstAttribute="leading" secondItem="iq8-xw-yIA" secondAttribute="leading" id="Bgp-U3-QPC"/>
+                                            <constraint firstItem="uTb-nB-QHJ" firstAttribute="centerY" secondItem="iq8-xw-yIA" secondAttribute="centerY" id="CYq-Ie-lcH"/>
+                                            <constraint firstItem="Avl-Iw-XN2" firstAttribute="top" secondItem="iq8-xw-yIA" secondAttribute="top" id="ITe-GQ-146"/>
+                                            <constraint firstItem="P2Z-8x-kuM" firstAttribute="top" secondItem="Vmm-UX-BzA" secondAttribute="bottom" constant="5" id="Ixm-IQ-Daz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Avl-Iw-XN2" secondAttribute="trailing" id="Lz0-Ny-BsB"/>
+                                            <constraint firstItem="Vmm-UX-BzA" firstAttribute="leading" secondItem="iq8-xw-yIA" secondAttribute="leading" constant="5" id="Nc6-xc-Cwc"/>
+                                            <constraint firstItem="uTb-nB-QHJ" firstAttribute="centerX" secondItem="iq8-xw-yIA" secondAttribute="centerX" id="Nec-Tg-g0c"/>
+                                            <constraint firstAttribute="bottom" secondItem="Avl-Iw-XN2" secondAttribute="bottom" id="RBW-iR-z0E"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vmm-UX-BzA" secondAttribute="trailing" constant="5" id="hqi-DK-kCl"/>
+                                            <constraint firstAttribute="bottom" secondItem="P2Z-8x-kuM" secondAttribute="bottom" constant="4" id="rsE-l3-HqT"/>
+                                            <constraint firstAttribute="trailing" secondItem="P2Z-8x-kuM" secondAttribute="trailing" constant="5" id="y96-hr-nod"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="uTb-nB-QHJ" id="kaq-zy-6wM"/>
+                                            <outlet property="imageView" destination="Vmm-UX-BzA" id="grW-cA-HUb"/>
+                                            <outlet property="imageViewSelection" destination="Avl-Iw-XN2" id="21z-0B-zpj"/>
+                                            <outlet property="lblTitle" destination="P2Z-8x-kuM" id="Lez-EA-Q6j"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="URf-a6-mWi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C8p-KI-S7S">
+                                    <rect key="frame" x="0.0" y="139" width="375" height="5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-N0-EnH">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.94901960780000005" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3T7-N0-EnH" firstAttribute="centerY" secondItem="mBB-kA-UtM" secondAttribute="centerY" id="0Qo-4f-g1D"/>
+                            <constraint firstItem="3T7-N0-EnH" firstAttribute="centerX" secondItem="mBB-kA-UtM" secondAttribute="centerX" id="Huf-iq-99X"/>
+                            <constraint firstItem="Hdu-kh-Vil" firstAttribute="leading" secondItem="mBB-kA-UtM" secondAttribute="leading" id="INL-Al-TTe"/>
+                            <constraint firstItem="Hdu-kh-Vil" firstAttribute="top" secondItem="UK9-NU-PgQ" secondAttribute="top" id="MWS-FZ-OMz"/>
+                            <constraint firstAttribute="trailing" secondItem="Hdu-kh-Vil" secondAttribute="trailing" id="cnC-l7-0bp"/>
+                            <constraint firstItem="mBB-kA-UtM" firstAttribute="bottom" secondItem="Hdu-kh-Vil" secondAttribute="bottom" id="xgQ-RF-J3a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mBB-kA-UtM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Delete" id="RYb-w5-4Dj"/>
+                    <navigationItem key="navigationItem" title="Delete" id="RYb-w5-4Dj">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="EpO-lS-De7">
+                            <connections>
+                                <action selector="deleteClick:" destination="SEc-Bq-ksA" id="vdb-EY-hxA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="3T7-N0-EnH" id="SiP-d1-HBN"/>
+                        <outlet property="deleteCollectionView" destination="Hdu-kh-Vil" id="uU9-hx-Bln"/>
+                        <segue destination="LNY-vG-XUp" kind="show" id="ngN-Y6-Nea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaA-Sf-Jf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273" y="778"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="E35-iH-xBb">
+            <objects>
+                <viewController id="LNY-vG-XUp" customClass="ImageVC" customModule="MAlada" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZEX-FH-hxK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-L5-U3h">
+                                <rect key="frame" x="20" y="198" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XTd-L5-U3h" secondAttribute="height" multiplier="1:1" id="CpB-vl-f1C"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Y5x-X7-GzO">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.94901960780000005" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XTd-L5-U3h" firstAttribute="centerX" secondItem="Ubc-6o-w0U" secondAttribute="centerX" id="6Ur-Vb-dKd"/>
+                            <constraint firstItem="XTd-L5-U3h" firstAttribute="centerY" secondItem="Ubc-6o-w0U" secondAttribute="centerY" id="HOP-Ta-QJj"/>
+                            <constraint firstItem="Y5x-X7-GzO" firstAttribute="centerX" secondItem="Ubc-6o-w0U" secondAttribute="centerX" id="Z6P-ix-duV"/>
+                            <constraint firstItem="Y5x-X7-GzO" firstAttribute="centerY" secondItem="Ubc-6o-w0U" secondAttribute="centerY" id="dB8-ey-D9R"/>
+                            <constraint firstItem="XTd-L5-U3h" firstAttribute="leading" secondItem="Ubc-6o-w0U" secondAttribute="leading" constant="20" id="mX5-d4-CAo"/>
+                            <constraint firstItem="Ubc-6o-w0U" firstAttribute="trailing" secondItem="XTd-L5-U3h" secondAttribute="trailing" constant="20" id="rAW-Sl-UBn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ubc-6o-w0U"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="kck-rn-XDK">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="rhU-YK-yAU">
+                            <connections>
+                                <action selector="deleteImage:" destination="LNY-vG-XUp" id="oEq-Yg-Ltp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Y5x-X7-GzO" id="oyo-yb-dZp"/>
+                        <outlet property="imageView" destination="XTd-L5-U3h" id="Gzq-AQ-vn1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQz-s2-XB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981.5999999999999" y="772.26386806596713"/>
         </scene>
         <!--Feature Image-->
         <scene sceneID="8AL-hx-l42">

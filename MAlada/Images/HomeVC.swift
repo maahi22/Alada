@@ -211,12 +211,11 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
             cell.layer.shadowOpacity = 1.0
             cell.layer.masksToBounds = false
             cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell       .contentView.layer.cornerRadius).cgPath
-            return cell
-       
-            
-            
-            
-            
+        
+        
+        cell.imageView.image = UIImage.decodeBase64(toImage: img.Data)
+        
+        return cell
         
     }
     

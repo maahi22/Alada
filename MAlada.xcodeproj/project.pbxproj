@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D753884B6E469DEFB8EFD9E /* Pods_MAladaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701C0C0D5524175E1DB75455 /* Pods_MAladaUITests.framework */; };
+		0F250DC31FBB48C90060F09D /* DeleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F250DC21FBB48C90060F09D /* DeleteCell.swift */; };
+		0F250DC61FBB56470060F09D /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F250DC51FBB56470060F09D /* ImageVC.swift */; };
+		0F250DC81FBB596B0060F09D /* CommonMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F250DC71FBB596B0060F09D /* CommonMethod.swift */; };
 		0F630CD71FB9F18A0003828C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CD61FB9F18A0003828C /* User.swift */; };
 		0F630CD91FB9F9A00003828C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CD81FB9F9A00003828C /* Photo.swift */; };
 		0F630CE61FBA082A0003828C /* CustomSideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630CE51FBA082A0003828C /* CustomSideMenuController.swift */; };
@@ -93,6 +96,9 @@
 
 /* Begin PBXFileReference section */
 		0A4E5BB71B7B62295F0A49AB /* Pods-MAladaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAladaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAladaTests/Pods-MAladaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F250DC21FBB48C90060F09D /* DeleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCell.swift; sourceTree = "<group>"; };
+		0F250DC51FBB56470060F09D /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		0F250DC71FBB596B0060F09D /* CommonMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethod.swift; sourceTree = "<group>"; };
 		0F630CD61FB9F18A0003828C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F630CD81FB9F9A00003828C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0F630CDB1FBA07EA0003828C /* SideMenuController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SideMenuController.xcodeproj; path = SideMenu/SideMenuController.xcodeproj; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 				0F630CED1FBA09FD0003828C /* FeaturedImagesVC.swift */,
 				0F630CF11FBA0E0C0003828C /* DeleteVC.swift */,
 				0F630CF31FBA14340003828C /* InsertVC.swift */,
+				0F250DC51FBB56470060F09D /* ImageVC.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 				5D9147261F909F40003A9FCD /* UIColor+KCSColor.swift */,
 				5D9147281F909F49003A9FCD /* Validations.swift */,
 				5D9147241F909EA9003A9FCD /* Constants.swift */,
+				0F250DC71FBB596B0060F09D /* CommonMethod.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				5D91471E1F909367003A9FCD /* HomeCell.swift */,
+				0F250DC21FBB48C90060F09D /* DeleteCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -661,6 +670,7 @@
 			files = (
 				5D9146E31F908478003A9FCD /* ViewController.swift in Sources */,
 				0F630CEE1FBA09FD0003828C /* FeaturedImagesVC.swift in Sources */,
+				0F250DC61FBB56470060F09D /* ImageVC.swift in Sources */,
 				5D9147231F909E59003A9FCD /* ConnectionHelper.swift in Sources */,
 				5D9147161F908830003A9FCD /* HomeVC.swift in Sources */,
 				5D9146E11F908478003A9FCD /* AppDelegate.swift in Sources */,
@@ -673,6 +683,8 @@
 				0F630CD91FB9F9A00003828C /* Photo.swift in Sources */,
 				5D91471F1F909367003A9FCD /* HomeCell.swift in Sources */,
 				5D9147271F909F40003A9FCD /* UIColor+KCSColor.swift in Sources */,
+				0F250DC81FBB596B0060F09D /* CommonMethod.swift in Sources */,
+				0F250DC31FBB48C90060F09D /* DeleteCell.swift in Sources */,
 				0F630CD71FB9F18A0003828C /* User.swift in Sources */,
 				5D9146E91F908478003A9FCD /* MAlada.xcdatamodeld in Sources */,
 				5D9147291F909F49003A9FCD /* Validations.swift in Sources */,

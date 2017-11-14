@@ -175,7 +175,7 @@ extension FeaturedImagesVC:UICollectionViewDelegate, UICollectionViewDataSource,
         let img:FeaturedImages = self.featureImageList[indexPath.row]
         
         
-        
+        cell.imageView.image = UIImage.decodeBase64(toImage: img.FeatureImg_fileData)
         
         cell.lblTitle.text = img.FeatureImg_kid
         
