@@ -18,7 +18,7 @@ class DeleteVC: UIViewController {
     
     @IBOutlet weak var deleteCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var featureImageList : [FeaturedImages] = []
+    var photoImageList : [Photo] = []
     
     
     
@@ -76,13 +76,13 @@ class DeleteVC: UIViewController {
         
         self.activityIndicator.startAnimating()
         
-        let urlString = "http://www.alada.co.in/AladaWebService.asmx/GetFetureImage"
+        let urlString = BaseUrl + MAlada_ViewImages + "UserID=\(userId)"
         
         self.CallImageApiWithoutParameter(urlString) { (responce, status) in
             
             if status {
                 
-                self.featureImageList = DBHelper.saveFeaturePhotos(responce)
+                self.photoImageList = DBHelper.savePhotos(responce)
                 DispatchQueue.main.async(execute: {  () -> Void  in
                     self.activityIndicator.stopAnimating()
                     self.deleteCollectionView.reloadData()
@@ -202,7 +202,7 @@ extension DeleteVC: UICollectionViewDelegate, UICollectionViewDataSource,UIColle
         // #warning Incomplete implementation, return the number of items
         
         
-        return self.featureImageList.count
+        return self.photoImageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -211,10 +211,10 @@ extension DeleteVC: UICollectionViewDelegate, UICollectionViewDataSource,UIColle
         let cell:DeleteCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierAvail, for: indexPath) as! DeleteCell
         
         
-        let img:FeaturedImages = self.featureImageList[indexPath.row]
+        let img:Photo = self.photoImageList[indexPath.row]
         
-        cell.lblTitle.text = img.FeatureImg_kid
-        cell.imageView.image = UIImage.decodeBase64(toImage: img.FeatureImg_fileData)
+        cell.lblTitle.text = img.PhotoID
+        cell.imageView.image = UIImage.decodeBase64(toImage: img.Data)
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

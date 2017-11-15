@@ -111,7 +111,7 @@ extension MenuVC: UITableViewDelegate,UITableViewDataSource{
         }else if text == "Delete" {
             sideMenuController?.performSegue(withIdentifier: "toDeleteVC", sender: nil)
         }else if text == "Share" {
-            
+            self.loadShare()
         }else if text == "Insert"{
          sideMenuController?.performSegue(withIdentifier: "toInserVC", sender: nil)
         }else  if text == "Home" {
@@ -122,7 +122,17 @@ extension MenuVC: UITableViewDelegate,UITableViewDataSource{
     }
     
     
-    
+    func loadShare(){
+        let textToShare = "Alada "
+        let defaultShareUrl = "Shre"
+        if let myWebsite = NSURL(string: "\(defaultShareUrl)") {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            // activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
     
     
     

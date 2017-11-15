@@ -58,26 +58,26 @@ class DBHelper: NSObject {
             let dict1 = pArray.object(at: i) as! NSDictionary
             let img = FeaturedImages()
             
-            if let FeatureImg_kid = dict1["FeatureImg_kid"], !(FeatureImg_kid is NSNull) {
-                img.FeatureImg_kid = (FeatureImg_kid as? String)!
+            if let FimagID = dict1["FimagID"], !(FimagID is NSNull) {
+                img.FimagID = (FimagID as? String)!
             }
             
-            if let FeatureImg_fileType = dict1["FeatureImg_fileType"], !(FeatureImg_fileType is NSNull) {
-                img.FeatureImg_fileType = (FeatureImg_fileType as? String)!
+            if let FType = dict1["FType"], !(FType is NSNull) {
+                img.FType = (FType as? String)!
             }
             
-            if let FeatureImg_fileName = dict1["FeatureImg_fileName"], !(FeatureImg_fileName is NSNull) {
-                img.FeatureImg_fileName = (FeatureImg_fileName as? String)!
+            if let Fname = dict1["Fname"], !(Fname is NSNull) {
+                img.Fname = (Fname as? String)!
             }
-            if let FeatureImg_fileData = dict1["FeatureImg_fileData"], !(FeatureImg_fileData is NSNull) {
-                img.FeatureImg_fileData = (FeatureImg_fileData as? String)!
+            if let Fpath = dict1["Fpath"], !(Fpath is NSNull) {
+                img.Fpath = (Fpath as? String)!
             }
-            if let FeatureImg_filePath = dict1["FeatureImg_filePath"], !(FeatureImg_filePath is NSNull) {
-                img.FeatureImg_filePath = (FeatureImg_filePath as? String)!
+            if let Status = dict1["Status"], !(Status is NSNull) {
+                img.Status = (Status as? String)!
             }
             
-            if let FeatureImg_CreationDate = dict1["FeatureImg_CreationDate"], !(FeatureImg_CreationDate is NSNull) {
-                img.FeatureImg_CreationDate = (FeatureImg_CreationDate as? String)!
+            if let Message = dict1["Message"], !(Message is NSNull) {
+                img.Message = (Message as? String)!
             }
             
             returnArray.append(img)

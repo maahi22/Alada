@@ -83,7 +83,7 @@ class FeaturedImagesVC: UIViewController {
         
         self.activityIndicator.startAnimating()
         
-        let urlString = "http://www.alada.co.in/AladaWebService.asmx/GetFetureImage"
+        let urlString = "http://www.mob.alada.co.in/api/Employee/FeaturedImage"//"http://www.alada.co.in/AladaWebService.asmx/GetFetureImage"
         
         self.CallImageApiWithoutParameter(urlString) { (responce, status) in
             
@@ -171,13 +171,27 @@ extension FeaturedImagesVC:UICollectionViewDelegate, UICollectionViewDataSource,
         
         let cell:HomeCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierAvail, for: indexPath) as! HomeCell
         
-        
         let img:FeaturedImages = self.featureImageList[indexPath.row]
         
         
-        cell.imageView.image = UIImage.decodeBase64(toImage: img.FeatureImg_fileData)
         
-        cell.lblTitle.text = img.FeatureImg_kid
+        if  let imageUrl = img.Fpath {
+            
+            let urlStr = imageUrl
+            
+            ConnectionHelper.urlToImageConverter(urlStr, completionHandler: { (image, success) in
+                if success {
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        cell.imageView.image = image
+                    })
+                }
+            })
+        }
+        
+        
+        //cell.imageView.image = UIImage.decodeBase64(toImage: img.FeatureImg_fileData)
+        
+        cell.lblTitle.text = img.Fname
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

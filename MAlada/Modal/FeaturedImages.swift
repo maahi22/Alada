@@ -13,13 +13,13 @@ class FeaturedImages {
     
     
     
-    @objc dynamic var FeatureImg_kid: String?  = ""
-    @objc dynamic var FeatureImg_fileType: String?  = ""
-    @objc dynamic var FeatureImg_fileName: String?  = ""
-    @objc dynamic var FeatureImg_fileData: String?  = ""
+    @objc dynamic var FimagID: String?  = ""
+    @objc dynamic var FType: String?  = ""
+    @objc dynamic var Fname: String?  = ""
+    @objc dynamic var Status: String?  = ""
     
-    @objc dynamic var FeatureImg_filePath: String?  = ""
-    @objc dynamic var FeatureImg_CreationDate: String?  = ""
+    @objc dynamic var Fpath: String?  = ""
+    @objc dynamic var Message: String?  = ""
    // @objc dynamic var FeatureImg_CreationDate: String?  = ""
     
     init(){

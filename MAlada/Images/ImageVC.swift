@@ -16,7 +16,7 @@ class ImageVC: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
-    var prod: FeaturedImages = FeaturedImages()
+    var prod: Photo = Photo()
     
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class ImageVC: UIViewController {
     
     @IBAction func deleteImage(_ sender: Any) {
     
-        var photoId = prod.FeatureImg_kid
+        var photoId = prod.PhotoID
         
         var userId = ""
         if let data = UserDefaults.standard.data(forKey: UserDetails),

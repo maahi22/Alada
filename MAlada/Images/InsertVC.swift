@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 class InsertVC: UIViewController {
 
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
+   
     var chosenImage : UIImage = UIImage()
     let imagePicker = UIImagePickerController()
     
@@ -74,11 +76,53 @@ class InsertVC: UIViewController {
     
     @IBAction func uploadImage(_ sender: Any) {
         
+        var userId = ""
+        if let data = UserDefaults.standard.data(forKey: UserDetails),
+            let myUser = NSKeyedUnarchiver.unarchiveObject(with: data) as? User {
+            userId = myUser.UserId!
+        }
         
         
+        //Call api
+        let reachability = Reachability()!
+        if !reachability.isReachable {
+            let alert = UIAlertController(title: "Alert", message: "No internet connection", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if chosenImage != nil {
         
+            let strBase64 = CommonMethod.convertImageToBase64(chosenImage)
+        
+        //let imgdata =
+        
+            self.activityIndicator.startAnimating()
+            let urlString = "www.mob.alada.co.in/api/values"
+            let paramString = ["UserID":userId,"FileName":"filename","Data":strBase64] as [String : Any]
+            
+            ConnectionHelper.GetDataFromJson(urlString, paramString: paramString) { (responce, status) in
+                
+                print(responce)
+                DispatchQueue.main.async(execute: { () -> Void  in
+                    self.activityIndicator.stopAnimating()
+                })
+                
+                
+                let responceDict = (responce.object(forKey: "response") as! NSDictionary)
+                if let statusVal = responceDict.object(forKey: "status") {
+                    if (statusVal as! NSNumber).intValue == 1 {
+                        
+                    }
+                }
+            }
+            
+        }
         
     }
+    
+    
+    
     
     
     

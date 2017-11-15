@@ -263,6 +263,10 @@
                                     <action selector="selectImage:" destination="Zsu-Y6-gz9" eventType="touchUpInside" id="lRh-cp-cND"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Xb-5u-I96">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.94901960780000005" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -270,8 +274,10 @@
                             <constraint firstItem="S4R-Q3-q0L" firstAttribute="trailing" secondItem="wCi-K4-WbF" secondAttribute="trailing" constant="35" id="7tB-3A-hRW"/>
                             <constraint firstItem="S4R-Q3-q0L" firstAttribute="trailing" secondItem="gfI-da-23Z" secondAttribute="trailing" constant="35" id="NmJ-LU-t31"/>
                             <constraint firstItem="gfI-da-23Z" firstAttribute="leading" secondItem="S4R-Q3-q0L" secondAttribute="leading" constant="35" id="RLA-u6-N2E"/>
+                            <constraint firstItem="6Xb-5u-I96" firstAttribute="centerY" secondItem="S4R-Q3-q0L" secondAttribute="centerY" id="Rok-fn-aqo"/>
                             <constraint firstItem="gfI-da-23Z" firstAttribute="top" secondItem="S4R-Q3-q0L" secondAttribute="top" constant="40" id="jSD-n2-ueU"/>
                             <constraint firstItem="wCi-K4-WbF" firstAttribute="top" secondItem="S4R-Q3-q0L" secondAttribute="top" constant="40" id="oBO-lq-avX"/>
+                            <constraint firstItem="6Xb-5u-I96" firstAttribute="centerX" secondItem="S4R-Q3-q0L" secondAttribute="centerX" id="qfq-LD-beF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S4R-Q3-q0L"/>
                     </view>
@@ -283,6 +289,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="6Xb-5u-I96" id="vg5-cT-FNu"/>
                         <outlet property="imageView" destination="gfI-da-23Z" id="n0Q-OV-RCP"/>
                     </connections>
                 </viewController>
@@ -370,6 +377,10 @@
                                     <rect key="frame" x="0.0" y="139" width="375" height="5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="SEc-Bq-ksA" id="xfT-8L-dat"/>
+                                    <outlet property="delegate" destination="SEc-Bq-ksA" id="dLU-oT-Tsh"/>
+                                </connections>
                             </collectionView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-N0-EnH">
                                 <rect key="frame" x="169" y="347" width="37" height="37"/>
@@ -531,6 +542,10 @@
                                     <rect key="frame" x="0.0" y="139" width="375" height="5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="rZs-rJ-UKr" id="nIv-m8-7ap"/>
+                                    <outlet property="delegate" destination="rZs-rJ-UKr" id="hEh-Ev-UKV"/>
+                                </connections>
                             </collectionView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AGM-3v-E1j">
                                 <rect key="frame" x="169" y="347" width="37" height="37"/>

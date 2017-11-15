@@ -13,6 +13,9 @@ let     MAlada_Login = "UserLogin?"
 let     MAlada_ViewImages = "ViewPhoto?"
 let     MAlada_ImageDelete = "DeletePhoto?"
 
+let     MAlada_ImageInsert = ""
+
+
 let     BaseUrl2 = "http://www.alada.co.in/AladaWebService.asmx/"
 let     MAlada_FeaturedImages = "GetFetureImage"
 
